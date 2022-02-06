@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     const categories = await Category.findAll({
       include: [
         {
-          model: Product,
+          model: Product
         },
       ],
     });
@@ -69,7 +69,7 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
   try {
-    const deleteCat = await Location.destroy({
+    const deleteCat = await Category.destroy({
       where: {
         id: req.params.id
       }
